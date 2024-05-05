@@ -11,6 +11,18 @@
 		5F5240292BE7A4480025D21F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240282BE7A4480025D21F /* ContentView.swift */; };
 		5F52402B2BE7A4490025D21F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F52402A2BE7A4490025D21F /* Assets.xcassets */; };
 		5F52402E2BE7A4490025D21F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F52402D2BE7A4490025D21F /* Preview Assets.xcassets */; };
+		5F5240352BE7A47F0025D21F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5F5240342BE7A47F0025D21F /* Localizable.xcstrings */; };
+		5F5240382BE7A55B0025D21F /* NameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240372BE7A55B0025D21F /* NameDay.swift */; };
+		5F52403B2BE7A5780025D21F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52403A2BE7A5780025D21F /* APIService.swift */; };
+		5F52403D2BE7A5910025D21F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52403C2BE7A5910025D21F /* NotificationService.swift */; };
+		5F5240402BE7A5B60025D21F /* NameDaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52403F2BE7A5B60025D21F /* NameDaysViewModel.swift */; };
+		5F5240442BE7A60C0025D21F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240432BE7A60C0025D21F /* DateExtensions.swift */; };
+		5F5240462BE7A6290025D21F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240452BE7A6290025D21F /* Constants.swift */; };
+		5F5240492BE7A6540025D21F /* NameDayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240482BE7A6540025D21F /* NameDayWidget.swift */; };
+		5F52404C2BE7A7AB0025D21F /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52404B2BE7A7AB0025D21F /* UserSettings.swift */; };
+		5F52404E2BE7A86E0025D21F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52404D2BE7A86E0025D21F /* SettingsViewModel.swift */; };
+		5F5240502BE7A8C80025D21F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52404F2BE7A8C80025D21F /* SettingsView.swift */; };
+		5F5240522BE7A91F0025D21F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240512BE7A91F0025D21F /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +31,18 @@
 		5F5240282BE7A4480025D21F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5F52402A2BE7A4490025D21F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F52402D2BE7A4490025D21F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5F5240342BE7A47F0025D21F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		5F5240372BE7A55B0025D21F /* NameDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDay.swift; sourceTree = "<group>"; };
+		5F52403A2BE7A5780025D21F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		5F52403C2BE7A5910025D21F /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5F52403F2BE7A5B60025D21F /* NameDaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDaysViewModel.swift; sourceTree = "<group>"; };
+		5F5240432BE7A60C0025D21F /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		5F5240452BE7A6290025D21F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5F5240482BE7A6540025D21F /* NameDayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDayWidget.swift; sourceTree = "<group>"; };
+		5F52404B2BE7A7AB0025D21F /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		5F52404D2BE7A86E0025D21F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5F52404F2BE7A8C80025D21F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5F5240512BE7A91F0025D21F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +75,14 @@
 		5F5240252BE7A4480025D21F /* Namnsdagar */ = {
 			isa = PBXGroup;
 			children = (
+				5F52404A2BE7A6B60025D21F /* Resources */,
+				5F5240472BE7A6330025D21F /* Widgets */,
+				5F5240422BE7A5F80025D21F /* Helpers */,
+				5F5240412BE7A5D20025D21F /* View */,
+				5F52403E2BE7A5A10025D21F /* ViewModels */,
+				5F5240392BE7A5670025D21F /* Services */,
+				5F5240362BE7A54C0025D21F /* Models */,
 				5F5240262BE7A4480025D21F /* NamnsdagarApp.swift */,
-				5F5240282BE7A4480025D21F /* ContentView.swift */,
-				5F52402A2BE7A4490025D21F /* Assets.xcassets */,
 				5F52402C2BE7A4490025D21F /* Preview Content */,
 			);
 			path = Namnsdagar;
@@ -65,6 +94,69 @@
 				5F52402D2BE7A4490025D21F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5F5240362BE7A54C0025D21F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F5240372BE7A55B0025D21F /* NameDay.swift */,
+				5F52404B2BE7A7AB0025D21F /* UserSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F5240392BE7A5670025D21F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5F52403A2BE7A5780025D21F /* APIService.swift */,
+				5F52403C2BE7A5910025D21F /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5F52403E2BE7A5A10025D21F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5F52403F2BE7A5B60025D21F /* NameDaysViewModel.swift */,
+				5F52404D2BE7A86E0025D21F /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5F5240412BE7A5D20025D21F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F5240282BE7A4480025D21F /* ContentView.swift */,
+				5F52404F2BE7A8C80025D21F /* SettingsView.swift */,
+				5F5240512BE7A91F0025D21F /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F5240422BE7A5F80025D21F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5F5240432BE7A60C0025D21F /* DateExtensions.swift */,
+				5F5240452BE7A6290025D21F /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5F5240472BE7A6330025D21F /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				5F5240482BE7A6540025D21F /* NameDayWidget.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		5F52404A2BE7A6B60025D21F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F52402A2BE7A4490025D21F /* Assets.xcassets */,
+				5F5240342BE7A47F0025D21F /* Localizable.xcstrings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,7 +200,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				sv,
 			);
 			mainGroup = 5F52401A2BE7A4480025D21F;
 			productRefGroup = 5F5240242BE7A4480025D21F /* Products */;
@@ -127,6 +219,7 @@
 			files = (
 				5F52402E2BE7A4490025D21F /* Preview Assets.xcassets in Resources */,
 				5F52402B2BE7A4490025D21F /* Assets.xcassets in Resources */,
+				5F5240352BE7A47F0025D21F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +230,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5240442BE7A60C0025D21F /* DateExtensions.swift in Sources */,
+				5F5240402BE7A5B60025D21F /* NameDaysViewModel.swift in Sources */,
+				5F5240382BE7A55B0025D21F /* NameDay.swift in Sources */,
+				5F52404C2BE7A7AB0025D21F /* UserSettings.swift in Sources */,
 				5F5240292BE7A4480025D21F /* ContentView.swift in Sources */,
+				5F52403B2BE7A5780025D21F /* APIService.swift in Sources */,
+				5F5240492BE7A6540025D21F /* NameDayWidget.swift in Sources */,
+				5F52403D2BE7A5910025D21F /* NotificationService.swift in Sources */,
+				5F5240522BE7A91F0025D21F /* SearchView.swift in Sources */,
+				5F52404E2BE7A86E0025D21F /* SettingsViewModel.swift in Sources */,
+				5F5240502BE7A8C80025D21F /* SettingsView.swift in Sources */,
 				5F5240272BE7A4480025D21F /* NamnsdagarApp.swift in Sources */,
+				5F5240462BE7A6290025D21F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +379,13 @@
 				DEVELOPMENT_TEAM = 7ZVZS46BYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Namnsdagar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +410,13 @@
 				DEVELOPMENT_TEAM = 7ZVZS46BYP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Namnsdagar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
