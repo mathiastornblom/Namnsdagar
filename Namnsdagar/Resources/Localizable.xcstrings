@@ -1,0 +1,30 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NAME_DAY_TITLE" : {
+      "comment" : "Name day reminder",
+      "extractionState" : "manual",
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Namnsdags påminnelse"
+          }
+        }
+      }
+    },
+    "TODAY_IS" : {
+      "comment" : "Today is %@'s name day!",
+      "extractionState" : "manual",
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idag är det %@'s namnsdag!"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
