@@ -31,15 +31,15 @@ class NameDaysViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self?.isLoading = false
                 switch result {
-                case .success(let fetchedNameDays):
-                    self?.nameDays = fetchedNameDays
+                case .success(let nameDays):
+                    self?.nameDays = nameDays
                 case .failure(let error):
                     print("Error fetching name days: \(error)")
                 }
             }
         }
     }
-    
+
     func loadNameDays(for date: Date) {
         currentDate = date
         // Assuming the nameDays array already contains the entire year's data
@@ -47,11 +47,23 @@ class NameDaysViewModel: ObservableObject {
     }
 
     func names(for date: Date) -> [String] {
-        guard let nameDay = nameDays.first(where: { DateFormatter().date(from: $0.datum) == date }) else {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: date)
+        
+        print("Searching for names for date: \(dateString)")
+        
+        guard let nameDay = nameDays.first(where: { $0.datum == dateString }) else {
+            print("No name day found for date: \(dateString)")
             return []
         }
+        
+        print("Name day found: \(nameDay)")
+        
         return nameDay.namnsdag
     }
+
+
     
     func findNextNameDay(for name: String) -> Date? {
         guard let nameDay = nameDays.first(where: { $0.namnsdag.contains(name) }),

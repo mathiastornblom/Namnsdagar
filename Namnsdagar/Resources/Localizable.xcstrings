@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
     "ADD_NEW_NAME" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -187,6 +190,7 @@
     },
     "NAME_DAYS_TITLE" : {
       "comment" : "Title for name days list",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -201,6 +205,9 @@
           }
         }
       }
+    },
+    "Namnsdagar" : {
+
     },
     "NETWORK_ERROR" : {
       "extractionState" : "manual",
@@ -496,6 +503,9 @@
           }
         }
       }
+    },
+    "W. %@" : {
+
     },
     "WIDGET_DESCRIPTION" : {
       "extractionState" : "manual",
