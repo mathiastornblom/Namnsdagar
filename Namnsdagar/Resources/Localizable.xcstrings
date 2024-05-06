@@ -275,6 +275,9 @@
         }
       }
     },
+    "No results found for '%@'. Please try another name." : {
+
+    },
     "No upcoming name day found for %@." : {
       "extractionState" : "stale",
       "localizations" : {
