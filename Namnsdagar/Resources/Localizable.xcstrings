@@ -4,6 +4,16 @@
     "%@" : {
 
     },
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
     "ADD_NEW_NAME" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -20,6 +30,9 @@
           }
         }
       }
+    },
+    "Calendar Picker" : {
+
     },
     "DECODING_ERROR" : {
       "extractionState" : "manual",
@@ -140,6 +153,7 @@
       }
     },
     "Name Day Search" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -156,6 +170,7 @@
       }
     },
     "Name Days Today" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -227,6 +242,7 @@
       }
     },
     "Next Name Day" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -260,6 +276,7 @@
       }
     },
     "No upcoming name day found for %@." : {
+      "extractionState" : "stale",
       "localizations" : {
         "sv" : {
           "stringUnit" : {
@@ -405,6 +422,7 @@
       }
     },
     "Search for a Name Day" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -436,6 +454,12 @@
           }
         }
       }
+    },
+    "Select" : {
+
+    },
+    "Select a date" : {
+
     },
     "SELECT_TIME" : {
       "extractionState" : "manual",
@@ -472,6 +496,7 @@
       }
     },
     "The next name day for %@ is on %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -504,7 +529,7 @@
         }
       }
     },
-    "W. %@" : {
+    "Week: %@" : {
 
     },
     "WIDGET_DESCRIPTION" : {

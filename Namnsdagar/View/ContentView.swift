@@ -4,7 +4,6 @@
 //
 //  Created by Mathias Törnblom on 2024-05-05.
 //
-
 import SwiftUI
 
 struct ContentView: View {
@@ -12,15 +11,17 @@ struct ContentView: View {
     @State private var showSettings = false
     @State private var showSearch = false
     @State private var currentDate = Date()  // Tracks the current date displayed
+    @State private var showCalendarPicker = false
+    @State private var selectedDate = Date()
     
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
                 // Display Year and Week Number
                 HStack {
-                    Text("\(currentDate.formatted(.dateTime.year()))")
+                    Text("\(currentDate.formatted(.dateTime.year()))").font(.title)
                     Spacer()
-                    Text("W. \(currentDate.formatted(.dateTime.week()))")
+                    Text("Week: \(currentDate.formatted(.dateTime.week()))").font(.title)
                 }
                 .padding()
                 
@@ -37,58 +38,89 @@ struct ContentView: View {
                 Text(currentDate.formatted(.dateTime.month(.wide)))
                     .font(.title)
                 
-                // Display Names that have Name Day
-                let nameDays = viewModel.names(for: currentDate)
-                if !nameDays.isEmpty {
-                    Text(nameDays.joined(separator: ", "))
-                        .padding()
-                        .font(.title2)
+                // Display Names that have Name Day with favorite toggle
+                List(viewModel.names(for: currentDate), id: \.self) { name in
+                    HStack {
+                        Text(name)
+                        Spacer()
+                        Button(action: {
+                            viewModel.toggleFavorite(name: name)
+                        }) {
+                            Image(systemName: viewModel.isFavorite(name: name) ? "star.fill" : "star")
+                                .foregroundColor(viewModel.isFavorite(name: name) ? .yellow : .gray)
+                        }
+                    }
                 }
+                .onAppear {
+                    let year = Calendar.current.component(.year, from: viewModel.currentDate)
+                    if viewModel.currentYear != year {
+                        viewModel.loadNameDaysForYear(year: year)
+                    } else {
+                        viewModel.loadNameDays(for: viewModel.currentDate)
+                    }
+                }
+
+
                 Spacer()
             }
-            .gesture(DragGesture().onEnded(handleSwipe))
-            .navigationTitle("Namnsdagar")
-            .toolbar {
-                leadingToolbarItem
-                trailingToolbarItem
-            }
+            .navigationBarTitle("Namnsdagar")
+            .navigationBarItems(
+                leading: Button(action: viewModel.loadNameDaysForCurrentYear) {
+                    Image(systemName: "arrow.clockwise")
+                },
+                trailing: HStack {
+                    Button(action: { showSearch = true }) {
+                        Image(systemName: "magnifyingglass")
+                    }
+                    Button(action: { showSettings = true }) {
+                        Image(systemName: "gear")
+                    }
+                    Button(action: { showCalendarPicker = true }) {
+                        Image(systemName: "calendar")
+                    }
+                }
+            )
             .sheet(isPresented: $showSettings) {
                 SettingsView(viewModel: SettingsViewModel())
             }
             .sheet(isPresented: $showSearch) {
-                SearchView(viewModel: viewModel)
+                SearchView(viewModel: viewModel, currentDate: $currentDate, isPresented: $showSearch)
             }
-        }
-    }
-    
-    private var leadingToolbarItem: some ToolbarContent {
-        ToolbarItemGroup(placement: .navigationBarLeading) {
-            Button(action: viewModel.loadNameDaysForCurrentYear) {
-                Image(systemName: "arrow.clockwise")
+            .sheet(isPresented: $showCalendarPicker) {
+                CalendarPickerView(selectedDate: $selectedDate) { selectedDate in
+                    currentDate = selectedDate // Update the current date
+                    showCalendarPicker = false // Dismiss the calendar picker
+                    let selectedYear = Calendar.current.component(.year, from: selectedDate)
+                    if selectedYear != viewModel.currentYear {
+                        viewModel.loadNameDaysForYear(year: selectedYear)
+                    }
+                    viewModel.loadNameDays(for: selectedDate) // Load name days for the selected date
+                }
             }
+
         }
-    }
-    
-    private var trailingToolbarItem: some ToolbarContent {
-        ToolbarItemGroup(placement: .navigationBarTrailing) {
-            Button(action: { showSearch = true }) {
-                Image(systemName: "magnifyingglass")
-            }
-            Button(action: { showSettings = true }) {
-                Image(systemName: "gear")
-            }
-        }
-    }
-    
-    private func handleSwipe(_ gesture: DragGesture.Value) {
-        let horizontalSwipe = gesture.translation.width
-        let verticalSwipe = gesture.translation.height
-        
-        if abs(horizontalSwipe) > abs(verticalSwipe) {
-            let adjustment = horizontalSwipe > 0 ? -1 : 1
-            let newDate = Calendar.current.date(byAdding: .day, value: adjustment, to: viewModel.currentDate) ?? viewModel.currentDate
-            viewModel.loadNameDays(for: newDate)
-        }
+        .gesture(
+            DragGesture()
+                .onEnded { gesture in
+                    let horizontalSwipe = gesture.translation.width
+                    let verticalSwipe = gesture.translation.height
+                    
+                    if abs(horizontalSwipe) > abs(verticalSwipe) {
+                        let adjustment = horizontalSwipe > 0 ? -1 : 1
+                        let newDate = Calendar.current.date(byAdding: .day, value: adjustment, to: currentDate) ?? currentDate
+                        currentDate = newDate
+                        viewModel.loadNameDays(for: newDate)
+                    }
+                }
+        )
+        .gesture(
+            TapGesture(count: 2)
+                .onEnded {
+                    // Navigate to the current day
+                    currentDate = Date()
+                    viewModel.loadNameDays(for: currentDate)
+                }
+        )
     }
 }
 

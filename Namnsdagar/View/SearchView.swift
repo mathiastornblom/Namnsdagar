@@ -7,44 +7,36 @@
 
 import SwiftUI
 
-/// View for searching the next name day occurrence for a specific name.
 struct SearchView: View {
-    @ObservedObject var viewModel: NameDaysViewModel  // ViewModel to access name day data.
+    @ObservedObject var viewModel: NameDaysViewModel
+    @Binding var currentDate: Date
+    @Binding var isPresented: Bool  // Add this to control the view presentation
 
-    @State private var searchQuery: String = ""  // State to hold the current search query input by the user.
-    @State private var nextNameDayDate: Date?  // State to hold the result of the search.
+    @State private var searchQuery: String = ""
+    @State private var searchResults: [(name: String, date: Date)] = []
 
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("Search for a Name Day")) {
-                    TextField("Enter a name", text: $searchQuery)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Button("Search") {
-                        // Perform the search when the button is pressed.
-                        nextNameDayDate = viewModel.findNextNameDay(for: searchQuery)
+            List {
+                TextField("Enter a name", text: $searchQuery)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .onChange(of: searchQuery) { newValue in
+                        searchResults = !newValue.isEmpty ? viewModel.findAllOccurrences(of: newValue) : []
                     }
-                    .disabled(searchQuery.isEmpty)  // Disable the button if there is no search query.
-                }
 
-                // Optionally display the result of the search.
-                if let date = nextNameDayDate {
-                    Section(header: Text("Next Name Day")) {
-                        Text("The next name day for \(searchQuery) is on \(date, formatter: dateFormatter)")
-                            .font(.headline)
-                    }
-                } else if !searchQuery.isEmpty {
-                    Section(header: Text("Next Name Day")) {
-                        Text("No upcoming name day found for \(searchQuery).")
-                            .foregroundColor(.red)
+                ForEach(searchResults, id: \.name) { result in
+                    Button(action: {
+                        currentDate = result.date
+                        isPresented = false  // Dismiss the view
+                    }) {
+                        Text("\(result.name) - \(result.date, formatter: dateFormatter)")
                     }
                 }
             }
-            .navigationBarTitle("Name Day Search", displayMode: .inline)
+            .navigationBarTitle("Search", displayMode: .inline)
         }
     }
 
-    // DateFormatter to format the displayed date results.
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -53,6 +45,11 @@ struct SearchView: View {
     }
 }
 
-#Preview {
-    SearchView(viewModel: NameDaysViewModel())
+
+struct SearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        let staticDate = Date()
+        let showSearch = Binding.constant(true)
+        SearchView(viewModel: NameDaysViewModel(), currentDate: .constant(staticDate), isPresented: showSearch)
+    }
 }
