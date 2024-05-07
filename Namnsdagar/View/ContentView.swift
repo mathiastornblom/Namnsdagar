@@ -4,6 +4,8 @@
 //
 //  Created by Mathias Törnblom on 2024-05-05.
 //
+
+
 import SwiftUI
 
 struct ContentView: View {
@@ -21,7 +23,7 @@ struct ContentView: View {
                 HStack {
                     Text("\(currentDate.formatted(.dateTime.year()))").font(.title)
                     Spacer()
-                    Text("Week: \(currentDate.formatted(.dateTime.week()))").font(.title)
+                    Text(String(localized: "Week: \(currentDate.formatted(.dateTime.week()))")).font(.title)
                 }
                 .padding()
                 
@@ -63,7 +65,7 @@ struct ContentView: View {
 
                 Spacer()
             }
-            .navigationBarTitle("Namnsdagar")
+            .navigationBarTitle(String(localized: "Names day")) // Localized navigation bar title
             .navigationBarItems(
                 leading: Button(action: viewModel.loadNameDaysForCurrentYear) {
                     Image(systemName: "arrow.clockwise")

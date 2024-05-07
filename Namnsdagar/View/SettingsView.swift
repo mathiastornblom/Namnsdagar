@@ -18,7 +18,7 @@ struct SettingsView: View {
                 notificationTimeSection() // Section for setting the notification time.
                 favoriteNamesSection() // Section for managing favorite names.
             }
-            .navigationBarTitle("Settings", displayMode: .inline)
+            .navigationBarTitle(String(localized: "Settings"), displayMode: .inline)
             .onAppear {
                 // Automatically set the form to editing mode upon view appearance.
                 self.editMode?.wrappedValue = .active
@@ -28,9 +28,9 @@ struct SettingsView: View {
 
     /// Section view for the notification time picker.
     private func notificationTimeSection() -> some View {
-        Section(header: Text("Notification Time")) {
+        Section(header: Text(String(localized: "Notification Time"))) {
             DatePicker(
-                "Select Notification Time",
+                String(localized: "Select Notification Time"),
                 selection: $viewModel.notificationTime,
                 displayedComponents: .hourAndMinute
             )
@@ -44,7 +44,7 @@ struct SettingsView: View {
 
     /// Section view for managing favorite names.
     private func favoriteNamesSection() -> some View {
-        Section(header: Text("Favorite Names")) {
+        Section(header: Text(String(localized: "Favorite Names"))) {
             List {
                 ForEach(Array(viewModel.favorites), id: \.self) { name in
                     Text(name) // Displays each favorite name.

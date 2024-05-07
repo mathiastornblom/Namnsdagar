@@ -7,16 +7,19 @@
 
 import SwiftUI
 
+/// A shared environment for the app.
 class AppEnvironment {
     static let shared = AppEnvironment()
     let nameDaysViewModel = NameDaysViewModel()
 }
 
+/// The main entry point of the Namnsdagar app.
 @main
 struct NamnsdagarApp: App {
     // Create an instance of the ViewModel
     let viewModel = NameDaysViewModel()
     
+    /// Initializes the app and requests notification authorization.
     init() {
         NotificationManager.shared.requestAuthorization()
     }

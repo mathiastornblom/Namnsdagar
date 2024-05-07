@@ -10,10 +10,12 @@ import Foundation
 /// Manages user-specific settings such as notification times and favorite names.
 class UserSettings: ObservableObject {
     // MARK: - Properties
+    
     @Published var favoriteNames: [String] = [] // Stores user's favorite names for notifications.
     @Published var notificationTime: Date = Date() // The time of day the user prefers to receive notifications.
     
     // MARK: - Initialization
+    
     init() {
         loadSettings()
     }
@@ -53,4 +55,3 @@ class UserSettings: ObservableObject {
         saveSettings()
     }
 }
-

@@ -2,13 +2,32 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
     },
     "%@ - %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$@ - %2$@"
           }
         }
@@ -32,7 +51,20 @@
       }
     },
     "Calendar Picker" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calender picker"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum väljare"
+          }
+        }
+      }
     },
     "DECODING_ERROR" : {
       "extractionState" : "manual",
@@ -102,7 +134,20 @@
       }
     },
     "Favorite Names" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriter"
+          }
+        }
+      }
     },
     "FAVORITE_NAMES" : {
       "extractionState" : "manual",
@@ -155,40 +200,6 @@
         }
       }
     },
-    "Name Day Search" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Namns"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sök namnsdagar"
-          }
-        }
-      }
-    },
-    "Name Days Today" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Todays names days"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dagens nmnsdagar"
-          }
-        }
-      }
-    },
     "NAME_DAY_TITLE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -206,14 +217,12 @@
         }
       }
     },
-    "NAME_DAYS_TITLE" : {
-      "comment" : "Title for name days list",
-      "extractionState" : "stale",
+    "Names day" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name Days"
+            "value" : "Name days"
           }
         },
         "sv" : {
@@ -223,9 +232,6 @@
           }
         }
       }
-    },
-    "Namnsdagar" : {
-
     },
     "NETWORK_ERROR" : {
       "extractionState" : "manual",
@@ -240,23 +246,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kan inte ansluta. Kontrollera din internetanslutning."
-          }
-        }
-      }
-    },
-    "Next Name Day" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next Name Day"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nästa namnsdag"
           }
         }
       }
@@ -279,15 +268,17 @@
       }
     },
     "No results found for '%@'. Please try another name." : {
-
-    },
-    "No upcoming name day found for %@." : {
-      "extractionState" : "stale",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No results found for '%@'. Please try another name."
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ingen kommande namnsdag hittades för %@."
+            "value" : "Inget namn hittade för; '%@'. Försök med annat namn."
           }
         }
       }
@@ -310,7 +301,20 @@
       }
     },
     "Notification Time" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification Time"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifikationstid"
+          }
+        }
+      }
     },
     "NOTIFICATION_TIME" : {
       "extractionState" : "manual",
@@ -430,23 +434,6 @@
         }
       }
     },
-    "Search for a Name Day" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search for a name day"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sök efter en namnsdag"
-          }
-        }
-      }
-    },
     "SEARCH_NAME_DAY" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -465,13 +452,52 @@
       }
     },
     "Select" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj"
+          }
+        }
+      }
     },
     "Select a date" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a date"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj ett datum"
+          }
+        }
+      }
     },
     "Select Notification Time" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Notification Time"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj en notifikationstid"
+          }
+        }
+      }
     },
     "SELECT_TIME" : {
       "extractionState" : "manual",
@@ -491,10 +517,6 @@
       }
     },
     "Settings" : {
-
-    },
-    "SETTINGS" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -510,19 +532,19 @@
         }
       }
     },
-    "The next name day for %@ is on %@" : {
-      "extractionState" : "stale",
+    "SETTINGS" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The next name day for %1$@ is on %2$@"
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nästa namnsdag för %1$@ är den %2$@"
+            "value" : "Inställningar"
           }
         }
       }
@@ -545,7 +567,20 @@
       }
     },
     "Week: %@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Week: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vecka: %@"
+          }
+        }
+      }
     },
     "WIDGET_DESCRIPTION" : {
       "extractionState" : "manual",

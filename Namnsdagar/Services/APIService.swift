@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Enum defining possible errors that can occur in the APIService.
 enum APIServiceError: Error {
     case invalidURL
     case requestFailed(statusCode: Int)
@@ -31,14 +32,16 @@ enum APIServiceError: Error {
 }
 
 /// A service responsible for fetching name day data from the network.
-import Foundation
-
 class APIService {
     static let shared = APIService()
 
     // Dictionary to cache fetched data, using the year as the key.
     private var cache = [String: [NameDay]]()
 
+    /// Fetches name days for a specific year from the API.
+    /// - Parameters:
+    ///   - year: The year for which to fetch name days.
+    ///   - completion: Completion handler returning a result containing an array of NameDay or an error.
     func fetchNameDays(for year: Int, completion: @escaping (Result<[NameDay], Error>) -> Void) {
         let urlString = Constants.apiBaseURL + "\(year)"
         print("URL being requested: \(urlString)")
@@ -57,7 +60,7 @@ class APIService {
         }
 
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            // Handle network errors (e.g., no internet, timeout)
+            // Handle network errors
             if let error = error {
                 print("Network request failed with error: \(error.localizedDescription)")
                 completion(.failure(APIServiceError.requestFailed(statusCode: (error as NSError).code)))
@@ -99,7 +102,6 @@ class APIService {
 
     }
 }
-
 
 // Helper structs to parse nested JSON
 struct NameDayResponse: Decodable {

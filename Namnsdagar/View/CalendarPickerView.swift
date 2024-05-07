@@ -7,20 +7,30 @@
 
 import SwiftUI
 
+/// A view for selecting a date from a calendar.
 struct CalendarPickerView: View {
-    @Binding var selectedDate: Date
+    
+    // MARK: - Properties
+    
+    @Binding var selectedDate: Date // Stores the selected date
     var onSelection: (Date) -> Void // Closure to handle the selection
+    
+    // MARK: - Body
     
     var body: some View {
         VStack {
-            DatePicker("Select a date", selection: $selectedDate, displayedComponents: [.date])
+            // Date picker for selecting a date
+            DatePicker(String(localized: "Select a date"), selection: $selectedDate, displayedComponents: [.date])
                 .datePickerStyle(GraphicalDatePickerStyle())
-            Button("Select") {
-                onSelection(selectedDate) // Notify the parent view of the selection
+            
+            // Button to confirm the selection
+            Button(String(localized: "Select")) {
+                // Notify the parent view of the selected date
+                onSelection(selectedDate)
             }
             .padding()
         }
         .padding()
-        .navigationTitle("Calendar Picker")
+        .navigationTitle(String(localized: "Calendar Picker")) // Navigation title for the view
     }
 }

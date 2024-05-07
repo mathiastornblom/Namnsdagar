@@ -77,7 +77,6 @@ class NameDaysViewModel: ObservableObject {
                 }
             }
         }
-//        .store(in: &cancellables) // Handle cancellation on deallocation
     }
 
     func loadNameDays(for date: Date) {
@@ -207,4 +206,4 @@ class NameDaysViewModel: ObservableObject {
         }
     }
 
-        }
+}
