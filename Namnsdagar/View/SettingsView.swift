@@ -7,54 +7,66 @@
 
 import SwiftUI
 
-/// View for managing user settings such as favorite names and notification times.
+/// A view for managing user settings, specifically for setting notification times and managing favorite names.
 struct SettingsView: View {
-    @ObservedObject var viewModel: SettingsViewModel
-
-    @State private var newFavoriteName: String = ""
+    @ObservedObject var viewModel: NameDaysViewModel // ViewModel containing settings data and logic.
+    @Environment(\.editMode) var editMode // Environment variable to control edit mode of the form.
 
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text(NSLocalizedString("FAVORITE_NAMES", comment: "Section header for favorite names"))) {
-                    List {
-                        ForEach(viewModel.favoriteNames, id: \.self) { name in
-                            Text(name)
-                        }
-                        .onDelete(perform: viewModel.removeFavoriteName)
-                        HStack {
-                            TextField(NSLocalizedString("ADD_NEW_NAME", comment: "Placeholder text for adding a new favorite name"), text: $newFavoriteName)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            Button(action: {
-                                viewModel.addFavoriteName(newFavoriteName)
-                                newFavoriteName = "" // Clear the text field after adding
-                            }) {
-                                Image(systemName: "plus.circle.fill")
-                                    .foregroundColor(.green)
-                            }
-                            .disabled(newFavoriteName.isEmpty) // Disable button if the text field is empty
-                        }
-                    }
-                }
-
-                Section(header: Text(NSLocalizedString("NOTIFICATION_TIME", comment: "Section header for notification time"))) {
-                    DatePicker(
-                        NSLocalizedString("SELECT_TIME", comment: "Label for selecting notification time"),
-                        selection: $viewModel.notificationTime,
-                        displayedComponents: .hourAndMinute
-                    )
-                    .datePickerStyle(WheelDatePickerStyle())
-                }
+                notificationTimeSection() // Section for setting the notification time.
+                favoriteNamesSection() // Section for managing favorite names.
             }
-            .navigationBarTitle(NSLocalizedString("SETTINGS", comment: "Navigation bar title for settings view"), displayMode: .inline)
-            .navigationBarItems(trailing: EditButton())
+            .navigationBarTitle("Settings", displayMode: .inline)
+            .onAppear {
+                // Automatically set the form to editing mode upon view appearance.
+                self.editMode?.wrappedValue = .active
+            }
         }
     }
+
+    /// Section view for the notification time picker.
+    private func notificationTimeSection() -> some View {
+        Section(header: Text("Notification Time")) {
+            DatePicker(
+                "Select Notification Time",
+                selection: $viewModel.notificationTime,
+                displayedComponents: .hourAndMinute
+            )
+            .datePickerStyle(CompactDatePickerStyle())
+            .onChange(of: viewModel.notificationTime) { oldTime, newTime in
+                viewModel.saveNotificationTime() // Save whenever the time changes
+                viewModel.rescheduleAllNotifications() // Optional: Reschedule all notifications if time changes
+            }
+        }
+    }
+
+    /// Section view for managing favorite names.
+    private func favoriteNamesSection() -> some View {
+        Section(header: Text("Favorite Names")) {
+            List {
+                ForEach(Array(viewModel.favorites), id: \.self) { name in
+                    Text(name) // Displays each favorite name.
+                }
+                .onDelete(perform: deleteFavorites) // Provides functionality to delete favorites.
+            }
+        }
+    }
+
+    /// Handles the deletion of favorite names using offsets from the list.
+    private func deleteFavorites(at offsets: IndexSet) {
+        for index in offsets {
+            let name = Array(viewModel.favorites)[index]
+            viewModel.toggleFavorite(name: name) // Toggle the favorite status, effectively removing it.
+        }
+    }
+    
 }
 
 // SwiftUI preview environment for SettingsView.
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(viewModel: SettingsViewModel())
+        SettingsView(viewModel: NameDaysViewModel())
     }
 }

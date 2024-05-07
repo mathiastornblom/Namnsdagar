@@ -16,7 +16,11 @@ class AppEnvironment {
 struct NamnsdagarApp: App {
     // Create an instance of the ViewModel
     let viewModel = NameDaysViewModel()
-
+    
+    init() {
+        NotificationManager.shared.requestAuthorization()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView(viewModel: AppEnvironment.shared.nameDaysViewModel)

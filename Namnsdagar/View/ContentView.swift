@@ -81,7 +81,7 @@ struct ContentView: View {
                 }
             )
             .sheet(isPresented: $showSettings) {
-                SettingsView(viewModel: SettingsViewModel())
+                SettingsView(viewModel: viewModel)
             }
             .sheet(isPresented: $showSearch) {
                 SearchView(viewModel: viewModel, currentDate: $currentDate, isPresented: $showSearch)

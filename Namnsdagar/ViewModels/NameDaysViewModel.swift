@@ -17,6 +17,7 @@ class NameDaysViewModel: ObservableObject {
     @Published var currentDate: Date = Date() // Stores the currently selected date.
     @Published var isLoading: Bool = false // Indicates whether data is being fetched.
     @Published var favorites: Set<String> = Set<String>() // Stores favorite names.
+    @Published var notificationTime: Date = Date()
 
     // MARK: - Private Properties
 
@@ -35,6 +36,7 @@ class NameDaysViewModel: ObservableObject {
         let year = Calendar.current.component(.year, from: currentDate)
         forceLoadNameDaysForYear(year: year)
         loadFavorites()
+        loadNotificationTime()
     }
 
     // MARK: - Data Loading Methods
@@ -161,16 +163,48 @@ class NameDaysViewModel: ObservableObject {
             func toggleFavorite(name: String) {
                 if favorites.contains(name) {
                     favorites.remove(name)
+                    NotificationManager.shared.unscheduleNotification(for: name)
                 } else {
                     favorites.insert(name)
+                    if let nextNameDayDate = findNextNameDay(for: name) {
+                        NotificationManager.shared.scheduleNotification(for: name, on: nextNameDayDate)
+                    }
                 }
                 saveFavorites()
             }
 
             // MARK: - Notifications
 
-            func scheduleNotification(for name: String) {
-                guard let nextNameDayDate = findNextNameDay(for: name) else { return }
-                notificationService.scheduleNotification(name: name, date: nextNameDayDate)
+            private func loadNotificationTime() {
+                NotificationManager.shared.requestAuthorization()
+                if let savedTime = UserDefaults.standard.object(forKey: "NotificationTime") as? Date {
+                    notificationTime = savedTime
+                }
             }
+
+            func saveNotificationTime() {
+                UserDefaults.standard.set(notificationTime, forKey: "NotificationTime")
+            }
+    func rescheduleAllNotifications() {
+        // Get the hour and minute from the stored notificationTime
+        let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: notificationTime)
+
+        // Iterate through all favorite names to reschedule their notifications
+        for name in favorites {
+            // Assume a method to get the date for each name
+            if let nameDayDate = findNextNameDay(for: name) {
+                var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: nameDayDate)
+                // Set the hour and minute for the notification
+                dateComponents.hour = timeComponents.hour
+                dateComponents.minute = timeComponents.minute
+
+                // Convert the components back to a date object, combining the date and time
+                if let finalNotificationDate = Calendar.current.date(from: dateComponents) {
+                    NotificationManager.shared.scheduleNotification(for: name, on: finalNotificationDate)
+                    print("Rescheduled notification for \(name) at \(finalNotificationDate)")
+                }
+            }
+        }
+    }
+
         }

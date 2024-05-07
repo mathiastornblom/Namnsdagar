@@ -101,6 +101,9 @@
         }
       }
     },
+    "Favorite Names" : {
+
+    },
     "FAVORITE_NAMES" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -306,6 +309,9 @@
         }
       }
     },
+    "Notification Time" : {
+
+    },
     "NOTIFICATION_TIME" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -464,6 +470,9 @@
     "Select a date" : {
 
     },
+    "Select Notification Time" : {
+
+    },
     "SELECT_TIME" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -480,6 +489,9 @@
           }
         }
       }
+    },
+    "Settings" : {
+
     },
     "SETTINGS" : {
       "extractionState" : "manual",
