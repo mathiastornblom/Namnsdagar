@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,7 +24,27 @@
 		5F5240542BE8040F0025D21F /* CalendarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240532BE8040F0025D21F /* CalendarPickerView.swift */; };
 		5F52407F2BE993600025D21F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52407E2BE993600025D21F /* AppDelegate.swift */; };
 		5F5240812BE994630025D21F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240802BE994630025D21F /* NotificationManager.swift */; };
+		5F5240872BEACAA70025D21F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F52405B2BE8D30D0025D21F /* WidgetKit.framework */; };
+		5F5240882BEACAA70025D21F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F52405D2BE8D30D0025D21F /* SwiftUI.framework */; };
+		5F52408B2BEACAA70025D21F /* Namnsdagar_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52408A2BEACAA70025D21F /* Namnsdagar_WidgetBundle.swift */; };
+		5F52408F2BEACAA70025D21F /* Namnsdagar_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52408E2BEACAA70025D21F /* Namnsdagar_Widget.swift */; };
+		5F5240912BEACAA70025D21F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240902BEACAA70025D21F /* AppIntent.swift */; };
+		5F5240932BEACAA80025D21F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5240922BEACAA80025D21F /* Assets.xcassets */; };
+		5F5240972BEACAA80025D21F /* Namnsdagar WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F5240862BEACAA70025D21F /* Namnsdagar WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F5240B12BEAD7B60025D21F /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240B02BEAD7B60025D21F /* Provider.swift */; };
+		5F5240B32BEAD7E80025D21F /* Namnsdagar_WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240B22BEAD7E80025D21F /* Namnsdagar_WidgetEntry.swift */; };
+		5F5240B82BEAD98E0025D21F /* NameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5240372BE7A55B0025D21F /* NameDay.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F5240952BEACAA80025D21F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F52401B2BE7A4480025D21F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F5240852BEACAA70025D21F;
+			remoteInfo = "Namnsdagar WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5F5240712BE8D30E0025D21F /* Embed Foundation Extensions */ = {
@@ -33,6 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5F5240972BEACAA80025D21F /* Namnsdagar WidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +81,14 @@
 		5F52405D2BE8D30D0025D21F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		5F52407E2BE993600025D21F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F5240802BE994630025D21F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		5F5240862BEACAA70025D21F /* Namnsdagar WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Namnsdagar WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F52408A2BEACAA70025D21F /* Namnsdagar_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namnsdagar_WidgetBundle.swift; sourceTree = "<group>"; };
+		5F52408E2BEACAA70025D21F /* Namnsdagar_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namnsdagar_Widget.swift; sourceTree = "<group>"; };
+		5F5240902BEACAA70025D21F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		5F5240922BEACAA80025D21F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F5240942BEACAA80025D21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5240B02BEAD7B60025D21F /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		5F5240B22BEAD7E80025D21F /* Namnsdagar_WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namnsdagar_WidgetEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +99,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F5240832BEACAA70025D21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5240882BEACAA70025D21F /* SwiftUI.framework in Frameworks */,
+				5F5240872BEACAA70025D21F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5240252BE7A4480025D21F /* Namnsdagar */,
+				5F5240892BEACAA70025D21F /* Namnsdagar Widget */,
 				5F52405A2BE8D30D0025D21F /* Frameworks */,
 				5F5240242BE7A4480025D21F /* Products */,
 			);
@@ -86,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5240232BE7A4480025D21F /* Namnsdagar.app */,
+				5F5240862BEACAA70025D21F /* Namnsdagar WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +219,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5F5240892BEACAA70025D21F /* Namnsdagar Widget */ = {
+			isa = PBXGroup;
+			children = (
+				5F52408A2BEACAA70025D21F /* Namnsdagar_WidgetBundle.swift */,
+				5F52408E2BEACAA70025D21F /* Namnsdagar_Widget.swift */,
+				5F5240902BEACAA70025D21F /* AppIntent.swift */,
+				5F5240922BEACAA80025D21F /* Assets.xcassets */,
+				5F5240942BEACAA80025D21F /* Info.plist */,
+				5F5240B02BEAD7B60025D21F /* Provider.swift */,
+				5F5240B22BEAD7E80025D21F /* Namnsdagar_WidgetEntry.swift */,
+			);
+			path = "Namnsdagar Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,11 +248,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				5F5240962BEACAA80025D21F /* PBXTargetDependency */,
 			);
 			name = Namnsdagar;
 			productName = Namnsdagar;
 			productReference = 5F5240232BE7A4480025D21F /* Namnsdagar.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5F5240852BEACAA70025D21F /* Namnsdagar WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5240982BEACAA80025D21F /* Build configuration list for PBXNativeTarget "Namnsdagar WidgetExtension" */;
+			buildPhases = (
+				5F5240822BEACAA70025D21F /* Sources */,
+				5F5240832BEACAA70025D21F /* Frameworks */,
+				5F5240842BEACAA70025D21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Namnsdagar WidgetExtension";
+			productName = "Namnsdagar WidgetExtension";
+			productReference = 5F5240862BEACAA70025D21F /* Namnsdagar WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -209,14 +281,18 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
+				ORGANIZATIONNAME = net.tornbloms;
 				TargetAttributes = {
 					5F5240222BE7A4480025D21F = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					5F5240852BEACAA70025D21F = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
 			buildConfigurationList = 5F52401E2BE7A4480025D21F /* Build configuration list for PBXProject "Namnsdagar" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -229,6 +305,7 @@
 			projectRoot = "";
 			targets = (
 				5F5240222BE7A4480025D21F /* Namnsdagar */,
+				5F5240852BEACAA70025D21F /* Namnsdagar WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +318,14 @@
 				5F52402E2BE7A4490025D21F /* Preview Assets.xcassets in Resources */,
 				5F52402B2BE7A4490025D21F /* Assets.xcassets in Resources */,
 				5F5240352BE7A47F0025D21F /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5240842BEACAA70025D21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5240932BEACAA80025D21F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +353,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F5240822BEACAA70025D21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5240912BEACAA70025D21F /* AppIntent.swift in Sources */,
+				5F5240B82BEAD98E0025D21F /* NameDay.swift in Sources */,
+				5F5240B32BEAD7E80025D21F /* Namnsdagar_WidgetEntry.swift in Sources */,
+				5F52408F2BEACAA70025D21F /* Namnsdagar_Widget.swift in Sources */,
+				5F5240B12BEAD7B60025D21F /* Provider.swift in Sources */,
+				5F52408B2BEACAA70025D21F /* Namnsdagar_WidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F5240962BEACAA80025D21F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F5240852BEACAA70025D21F /* Namnsdagar WidgetExtension */;
+			targetProxy = 5F5240952BEACAA80025D21F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5F52402F2BE7A4490025D21F /* Debug */ = {
@@ -462,6 +568,80 @@
 			};
 			name = Release;
 		};
+		5F5240992BEACAA80025D21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Namnsdagar WidgetExtension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZVZS46BYP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Namnsdagar Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Namnsdagar Widget";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = NameDayWidgetEntryView;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tornbloms.Namnsdagar.Namnsdagar-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F52409A2BEACAA80025D21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Namnsdagar WidgetExtension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7ZVZS46BYP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Namnsdagar Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Namnsdagar Widget";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = NameDayWidgetEntryView;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.tornbloms.Namnsdagar.Namnsdagar-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,6 +659,15 @@
 			buildConfigurations = (
 				5F5240322BE7A4490025D21F /* Debug */,
 				5F5240332BE7A4490025D21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5240982BEACAA80025D21F /* Build configuration list for PBXNativeTarget "Namnsdagar WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5240992BEACAA80025D21F /* Debug */,
+				5F52409A2BEACAA80025D21F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

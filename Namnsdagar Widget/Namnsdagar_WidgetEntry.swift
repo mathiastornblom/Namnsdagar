@@ -6,14 +6,13 @@
 //  Copyright © 2024 net.tornbloms. All rights reserved.
 //
 
+import WidgetKit
 import SwiftUI
 
-struct Namnsdagar_WidgetEntry: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    Namnsdagar_WidgetEntry()
+struct SimpleEntry: TimelineEntry {
+    let date: Date
+    let nameOfTheDay: String
+    let dayNumber: Int
+    let month: String
+    let names: [String]
 }

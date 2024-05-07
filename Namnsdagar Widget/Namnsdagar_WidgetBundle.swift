@@ -12,6 +12,5 @@ import SwiftUI
 struct Namnsdagar_WidgetBundle: WidgetBundle {
     var body: some Widget {
         Namnsdagar_Widget()
-        Namnsdagar_WidgetLiveActivity()
     }
 }
